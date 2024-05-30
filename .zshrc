@@ -71,6 +71,7 @@ zstyle ':fxf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
+alias vim='nvim'
 alias '??'='gh copilot suggest -t shell'
 alias 'git?'='gh copilot suggest -t git'
 alias 'explain'='gh copilot explain'
