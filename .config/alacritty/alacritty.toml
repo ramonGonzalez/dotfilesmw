@@ -1,0 +1,19 @@
+import = [
+	"~/alacritty/themes/themes/google.toml"
+]
+
+[window]
+
+decorations = "Transparent"
+decorations_theme_variant = "Dark"
+
+[font]
+
+normal.family = "JetBrainsMono Nerd Font"
+bold.family = "JetBrainsMono Nerd Font"
+italic.family = "JetBrainsMono Nerd Font"
+bold_italic.family = "JetBrainsMono Nerd Font"
+
+size = 14.0
+
+
