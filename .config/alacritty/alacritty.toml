@@ -4,7 +4,7 @@ import = [
 
 [window]
 
-decorations = "Transparent"
+#decorations = "Transparent"
 decorations_theme_variant = "Dark"
 
 [font]
@@ -14,6 +14,6 @@ bold.family = "JetBrainsMono Nerd Font"
 italic.family = "JetBrainsMono Nerd Font"
 bold_italic.family = "JetBrainsMono Nerd Font"
 
-size = 14.0
+size = 15.0
 
 

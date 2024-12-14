@@ -1,0 +1,5 @@
+# Set the working directory
+cd ~
+# Create a window and run the specified command
+#launch tmux
+launch fastfetch
