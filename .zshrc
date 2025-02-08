@@ -73,6 +73,9 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # Aliases
 alias ls='ls --color'
+alias l='eza -l --icons --git -a'
+alias lt='eza --tree --level=2 --icons --git'
+alias ltree='eza --tree --level=2 --icons --git'
 alias vim='nvim'
 alias cat='bat'
 alias '??'='gh copilot suggest -t shell'
