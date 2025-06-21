@@ -5,13 +5,14 @@
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
 
-eval "$(devbox global shellenv)"
+#eval "$(devbox global shellenv)"
 
 #PATH="/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/dotnet:/Users/ramon/.dotnet/tools:/Users/ramon/.local/bin:$HOME/.nix-profile/bin:${PATH}"
 export PATH="$PATH:${HOME}/.dotnet:${HOME}/.dotnet/tools"
 #export PATH="$HOME/.jenv/bin:$PATH"
 #export NVM_DIR=~/.nvm
 #source $(brew --prefix nvm)/nvm.sh
+export HOMEBREW_BUNDLE_FILE=~/.config/brew/.Brewfile
 
 # Set zinit directory
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -90,11 +91,14 @@ alias '??'='gh copilot suggest -t shell'
 alias 'git?'='gh copilot suggest -t git'
 alias 'explain'='gh copilot explain'
 alias 'gh?'='gh copilot suggest -t gh'
+alias bsync="brew update &&\
+    brew bundle install --cleanup --file=~/.config/brew/.Brewfile &&\
+    brew upgrade"
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(gh copilot alias -- zsh)"
 #eval "$(jenv init -)"
-eval "$(direnv hook zsh)"
+#eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
