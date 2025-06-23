@@ -5,7 +5,7 @@
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
 
-#eval "$(devbox global shellenv)"
+eval "$(devbox global shellenv)"
 
 #PATH="/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/dotnet:/Users/ramon/.dotnet/tools:/Users/ramon/.local/bin:$HOME/.nix-profile/bin:${PATH}"
 export PATH="$PATH:${HOME}/.dotnet:${HOME}/.dotnet/tools"
@@ -13,6 +13,7 @@ export PATH="$PATH:${HOME}/.dotnet:${HOME}/.dotnet/tools"
 #export NVM_DIR=~/.nvm
 #source $(brew --prefix nvm)/nvm.sh
 export HOMEBREW_BUNDLE_FILE=~/.config/brew/.Brewfile
+export EDITOR=nvim
 
 # Set zinit directory
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -52,7 +53,7 @@ autoload -U compinit && compinit
 zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Keybindings
 bindkey '^p' history-search-backward
@@ -100,5 +101,5 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(gh copilot alias -- zsh)"
 #eval "$(jenv init -)"
-#eval "$(direnv hook zsh)"
+eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
