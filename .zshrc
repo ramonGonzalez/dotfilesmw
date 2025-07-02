@@ -6,13 +6,14 @@
 #fi
 
 eval "$(devbox global shellenv)"
+eval "$(/usr/local/bin/brew shellenv)"
 
 #PATH="/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/dotnet:/Users/ramon/.dotnet/tools:/Users/ramon/.local/bin:$HOME/.nix-profile/bin:${PATH}"
-export PATH="$PATH:${HOME}/.dotnet:${HOME}/.dotnet/tools"
+export PATH="$PATH:${HOME}/.dotnet:${HOME}/.dotnet/tools:${HOME}/quickemu"
 #export PATH="$HOME/.jenv/bin:$PATH"
-#export NVM_DIR=~/.nvm
-#source $(brew --prefix nvm)/nvm.sh
-export HOMEBREW_BUNDLE_FILE=~/.config/brew/.Brewfile
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+export HOMEBREW_BUNDLE_FILE=~/.config/brew/.BrewfileWork
 export EDITOR=nvim
 
 # Set zinit directory
@@ -93,7 +94,7 @@ alias 'git?'='gh copilot suggest -t git'
 alias 'explain'='gh copilot explain'
 alias 'gh?'='gh copilot suggest -t gh'
 alias bsync="brew update &&\
-    brew bundle install --cleanup --file=~/.config/brew/.Brewfile &&\
+    brew bundle install --cleanup &&\
     brew upgrade"
 
 # Shell integrations
