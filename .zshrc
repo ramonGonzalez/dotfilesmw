@@ -10,8 +10,8 @@ eval "$(devbox global shellenv)"
 #PATH="/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/dotnet:/Users/ramon/.dotnet/tools:/Users/ramon/.local/bin:$HOME/.nix-profile/bin:${PATH}"
 export PATH="$PATH:${HOME}/.dotnet:${HOME}/.dotnet/tools"
 #export PATH="$HOME/.jenv/bin:$PATH"
-#export NVM_DIR=~/.nvm
-#source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 export HOMEBREW_BUNDLE_FILE=~/.config/brew/.Brewfile
 export EDITOR=nvim
 
