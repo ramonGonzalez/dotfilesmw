@@ -21,7 +21,9 @@ brew "stow"
 brew "thefuck"
 brew "tlrc"
 brew "zoxide"
+brew "fabric-ai"
 cask "microsoft-azure-storage-explorer"
+cask "vnc-viewer"
 
 #quickemu dependencies
 brew "bash"

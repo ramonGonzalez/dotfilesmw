@@ -83,6 +83,7 @@ zstyle ':fxf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # Aliases
+alias fabric='fabric-ai'
 alias ls='ls --color'
 alias l='eza -l --icons --git -a'
 alias lt='eza --tree --level=2 --icons --git'
@@ -94,7 +95,7 @@ alias 'git?'='gh copilot suggest -t git'
 alias 'explain'='gh copilot explain'
 alias 'gh?'='gh copilot suggest -t gh'
 alias bsync="brew update &&\
-    brew bundle install --cleanup &&\
+    brew bundle install --cleanup --verbose &&\
     brew upgrade"
 
 # Shell integrations
