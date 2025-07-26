@@ -17,6 +17,7 @@ brew "fastfetch"
 brew "direnv"
 brew "python"
 brew "nvm"
+
 cask "font-fira-code-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
 cask "ghostty"

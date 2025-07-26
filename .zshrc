@@ -7,7 +7,6 @@
 
 eval "$(devbox global shellenv)"
 
-#PATH="/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/dotnet:/Users/ramon/.dotnet/tools:/Users/ramon/.local/bin:$HOME/.nix-profile/bin:${PATH}"
 export PATH="$PATH:${HOME}/.dotnet:${HOME}/.dotnet/tools"
 #export PATH="$HOME/.jenv/bin:$PATH"
 export NVM_DIR=~/.nvm
@@ -93,7 +92,7 @@ alias 'git?'='gh copilot suggest -t git'
 alias 'explain'='gh copilot explain'
 alias 'gh?'='gh copilot suggest -t gh'
 alias bsync="brew update &&\
-    brew bundle install --cleanup --file=~/.config/brew/.Brewfile &&\
+    brew bundle install --cleanup --verbose --file=~/.config/brew/.Brewfile &&\
     brew upgrade"
 
 # Shell integrations
