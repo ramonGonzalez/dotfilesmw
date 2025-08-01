@@ -25,19 +25,3 @@ brew "fabric-ai"
 cask "microsoft-azure-storage-explorer"
 cask "vnc-viewer"
 
-#quickemu dependencies
-brew "bash"
-brew "cdrtools"
-brew "coreutils"
-#brew "jq"
-brew "python3"
-brew "qemu"
-brew "usbutils"
-brew "samba"
-brew "socat"
-brew "swtpm"
-brew "zsync"
-
-#quickgui dependencies
-brew "cocoapods"
-cask "flutter"
