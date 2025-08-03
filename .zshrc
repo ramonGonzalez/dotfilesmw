@@ -13,6 +13,7 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 export HOMEBREW_BUNDLE_FILE=~/.config/brew/.Brewfile
 export EDITOR=nvim
+export SUDO_EDITOR="$EDITOR"
 
 # Set zinit directory
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -59,7 +60,7 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 # History
-HISTSIZE=10000
+HISTSIZE=32768
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
@@ -81,10 +82,13 @@ zstyle ':fxf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # Aliases
-alias ls='ls --color'
-alias l='eza -l --icons --git -a'
+alias ls='eza -lh --group-directories-first --icons=auto --git'
+alias lsa='ls -a'
 alias lt='eza --tree --level=2 --icons --git'
 alias ltree='eza --tree --level=2 --icons --git'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias vim='nvim'
 alias cat='bat'
 alias '??'='gh copilot suggest -t shell'
@@ -92,7 +96,7 @@ alias 'git?'='gh copilot suggest -t git'
 alias 'explain'='gh copilot explain'
 alias 'gh?'='gh copilot suggest -t gh'
 alias bsync="brew update &&\
-    brew bundle install --cleanup --verbose --file=~/.config/brew/.Brewfile &&\
+    brew bundle install --cleanup --verbose &&\
     brew upgrade"
 
 # Shell integrations
