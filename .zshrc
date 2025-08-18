@@ -1,16 +1,13 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-#fi
 
-eval "$(devbox global shellenv)"
-eval "$(/usr/local/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-#PATH="/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/dotnet:/Users/ramon/.dotnet/tools:/Users/ramon/.local/bin:$HOME/.nix-profile/bin:${PATH}"
-export PATH="$PATH:${HOME}/.dotnet:${HOME}/.dotnet/tools:${HOME}/quickemu"
-#export PATH="$HOME/.jenv/bin:$PATH"
+export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+  [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
+export PATH="$PATH:${HOME}/.dotnet:${HOME}/.dotnet/tools"
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 export HOMEBREW_BUNDLE_FILE=~/.config/brew/.BrewfileWork
@@ -106,6 +103,5 @@ alias bsync="brew update &&\
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(gh copilot alias -- zsh)"
-#eval "$(jenv init -)"
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
