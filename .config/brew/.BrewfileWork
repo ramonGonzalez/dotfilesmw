@@ -36,8 +36,11 @@ cask "google-chrome"
 cask "microsoft-teams"
 cask "protonvpn"
 
+# SDKMAN install to easily install the correct Java SDK
 tap "sdkman/tap"
 brew "sdkman-cli"
 
+# MongoDB local install
 tap "mongodb/brew"
 brew "mongodb-community"
+cask "mongodb-compass"
