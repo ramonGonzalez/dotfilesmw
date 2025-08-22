@@ -13,6 +13,8 @@ source $(brew --prefix nvm)/nvm.sh
 export HOMEBREW_BUNDLE_FILE=~/.config/brew/.BrewfileWork
 export EDITOR=nvim
 export SUDO_EDITOR="$EDITOR"
+#export RSYNC_LOGSEQ="$(pass rsync/logseq)"
+#export OPENAI_API_KEY="$(pass apikey/openai)"
 
 # Set zinit directory
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -101,7 +103,7 @@ alias bsync="brew update &&\
 
 # Shell integrations
 eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+eval "$(zoxide init zsh)"
 eval "$(gh copilot alias -- zsh)"
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
