@@ -107,3 +107,9 @@ eval "$(zoxide init zsh)"
 eval "$(gh copilot alias -- zsh)"
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
+eval "$(mise activate zsh --shims)"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/ramon/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
