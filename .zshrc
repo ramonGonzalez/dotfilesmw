@@ -7,12 +7,19 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
   [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
-export PATH="$PATH:${HOME}/.dotnet:${HOME}/.dotnet/tools"
+export PATH="$PATH:${HOME}/.dotnet:${HOME}/.dotnet/tools:/opt/homebrew/opt/mysql-client/bin"
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 export HOMEBREW_BUNDLE_FILE=~/.config/brew/.BrewfileWork
 export EDITOR=nvim
 export SUDO_EDITOR="$EDITOR"
+export EZA_CONFIG_DIR=~/.config/eza
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
+--color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
+--color=marker:#B4BEFE,fg+:#CDD6F4,prompt:#CBA6F7,hl+:#F38BA8 \
+--color=selected-bg:#45475A \
+--color=border:#6C7086,label:#CDD6F4"
 #export RSYNC_LOGSEQ="$(pass rsync/logseq)"
 #export OPENAI_API_KEY="$(pass apikey/openai)"
 
@@ -93,18 +100,27 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias vim='nvim'
 alias cat='bat'
-alias '??'='gh copilot suggest -t shell'
-alias 'git?'='gh copilot suggest -t git'
-alias 'explain'='gh copilot explain'
-alias 'gh?'='gh copilot suggest -t gh'
+alias '??'='copilot --allow-all-tools -p'
+alias 'git?'='copilot --allow-all-tools -p'
+alias 'explain'='copilot --allow-all-tools -p'
+alias 'gh?'='copilot --allow-all-tools -p'
 alias bsync="brew update &&\
     brew bundle install --cleanup --verbose &&\
     brew upgrade"
 
+#Yazi 
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
-eval "$(gh copilot alias -- zsh)"
+# GitHub Copilot CLI aliases are now defined manually above
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 eval "$(mise activate zsh --shims)"
@@ -113,3 +129,6 @@ fpath=(/Users/ramon/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+# Added by Antigravity
+export PATH="/Users/ramon/.antigravity/antigravity/bin:$PATH"
