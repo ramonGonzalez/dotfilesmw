@@ -165,6 +165,16 @@ disabled = false
 show_notifications = true
 min_time_to_notify = 45000
 
+[azure]
+disabled = false
+format = 'on [$symbol($subscription)]($style) '
+symbol = '󰠅 '
+style = 'blue bold'
+
+[mise]
+disabled = false
+health= 'ready'
+
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
 flamingo = "#f2cdcd"
