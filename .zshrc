@@ -60,6 +60,13 @@ autoload -U compinit && compinit
 
 zinit cdreplay -q
 
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
+bindkey ' ' magic-space
+
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -107,6 +114,10 @@ alias 'gh?'='copilot --allow-all-tools -p'
 alias bsync="brew update &&\
     brew bundle install --cleanup --verbose &&\
     brew upgrade"
+
+alias -s md='glow -t'
+alias -s json='jless'
+alias -s yaml='bat -l yaml'
 
 #Yazi 
 function y() {
