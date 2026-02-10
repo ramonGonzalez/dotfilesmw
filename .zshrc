@@ -7,7 +7,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
   [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
-export PATH="$PATH:${HOME}/.dotnet:${HOME}/.dotnet/tools:/opt/homebrew/opt/mysql-client/bin"
+export PATH="$PATH:${HOME}/.dotnet:${HOME}/.dotnet/tools:/opt/homebrew/opt/mysql-client/bin:$HOME/.local/bin"
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 export HOMEBREW_BUNDLE_FILE=~/.config/brew/.BrewfileWork
@@ -20,6 +20,7 @@ export FZF_DEFAULT_OPTS=" \
 --color=marker:#B4BEFE,fg+:#CDD6F4,prompt:#CBA6F7,hl+:#F38BA8 \
 --color=selected-bg:#45475A \
 --color=border:#6C7086,label:#CDD6F4"
+export DOCKER_HOST="unix://$(podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}')"
 #export RSYNC_LOGSEQ="$(pass rsync/logseq)"
 #export OPENAI_API_KEY="$(pass apikey/openai)"
 
@@ -134,7 +135,7 @@ eval "$(zoxide init zsh)"
 # GitHub Copilot CLI aliases are now defined manually above
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
-eval "$(mise activate zsh --shims)"
+eval "$(mise activate zsh)"
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/ramon/.docker/completions $fpath)
 autoload -Uz compinit
