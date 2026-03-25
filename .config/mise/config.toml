@@ -1,0 +1,10 @@
+# Global mise config — default runtimes for all projects
+# Per-project .mise.toml files override these defaults
+
+[tools]
+java = "zulu-21.48.17.0"
+node = "latest"
+
+[settings]
+# Auto-install missing tools when entering a directory with .mise.toml
+auto_install = true
