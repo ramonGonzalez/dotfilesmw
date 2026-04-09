@@ -45,12 +45,44 @@ node = "latest"     # default Node
 java = "zulu-8"     # e.g., ePACT needs Java 8
 ```
 
+## SSH Keys (YubiKey)
+
+SSH keys are stored on the YubiKey as FIDO2 resident keys — the private key never touches disk and can't be extracted from the hardware.
+
+Two YubiKeys are registered everywhere (main + backup). If one is lost, plug in the other and it works immediately.
+
+### First-time setup (run once per YubiKey)
+
+Requires Homebrew's OpenSSH and libfido2 (handled by `setup.sh`):
+
+```bash
+ssh-keygen -t ed25519-sk -O resident -C "yubikey-main"   # main key
+ssh-keygen -t ed25519-sk -O resident -C "yubikey-backup"  # backup key
+```
+
+Then register both public keys with GitHub, GitLab, or any other service.
+
+### New machine setup
+
+No key generation needed — just pull the resident key from the YubiKey:
+
+```bash
+# Plug in YubiKey, then:
+ssh-keygen -K
+mv id_ed25519_sk_rk ~/.ssh/
+mv id_ed25519_sk_rk.pub ~/.ssh/
+```
+
+> The private key handle on disk is not the actual private key — it only works when the YubiKey is physically present.
+
+---
+
 ## Manual Steps After Setup
 
 1. Open a new terminal
 2. `az login` — Azure CLI
 3. Connect Twingate — VPN
-4. Import SSH keys
+4. Pull SSH keys from YubiKey (see section above)
 5. Clone work repos to `~/_devroot/`
 6. Open Claude Code, run `/ep-pr-setup`
 7. Configure IntelliJ JDKs (paths printed by setup script)

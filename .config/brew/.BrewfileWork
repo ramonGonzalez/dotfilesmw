@@ -1,3 +1,5 @@
+tap "azure/functions"
+
 brew "azure-cli"
 brew "bat"
 brew "cmatrix"
@@ -9,11 +11,11 @@ brew "fd"
 brew "fzf"
 brew "gh"
 brew "jq"
+brew "tmux"
 brew "lazygit"
 brew "lazydocker"
 brew "mysql-client"
 brew "neovim"
-# nvm removed — mise handles Node version management
 brew "nushell"
 brew "ripgrep"
 brew "stow"
@@ -54,6 +56,10 @@ brew "git-delta"
 brew "hyperfine"
 brew "xh"
 brew "difftastic"
+brew "mailsy"
+brew "azure-functions-core-tools@4"
+brew "openssh"
+brew "libfido2"
 
 cask "cmux"
 cask "font-fira-code-nerd-font"
@@ -69,8 +75,5 @@ cask "protonvpn"
 cask "claude"
 cask "obs"
 cask "zed"
-
-# sdkman removed — mise handles Java version management
-
-# MongoDB local install
 cask "mongodb-compass"
+cask "obsidian"
