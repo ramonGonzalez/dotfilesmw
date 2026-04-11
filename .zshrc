@@ -1,7 +1,5 @@
 
 export PATH="$PATH:${HOME}/.dotnet:${HOME}/.dotnet/tools"
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
 export HOMEBREW_BUNDLE_FILE=~/.config/brew/.Brewfile
 export EDITOR=nvim
 export SUDO_EDITOR="$EDITOR"
@@ -85,7 +83,12 @@ alias bsync="brew update &&\
 
 # Shell integrations
 eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+eval "$(zoxide init zsh)"
 eval "$(gh copilot alias -- zsh)"
 eval "$(starship init zsh)"
 eval "$(mise activate zsh --shims)"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/gama/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
