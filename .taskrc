@@ -1,0 +1,64 @@
+# Taskwarrior config
+data.location=/Users/ramon/.task
+news.version=3.4.2
+
+# ── Catppuccin Mocha Theme ─────────────────────────────────────────
+# Matches terminal + starship + status line theme
+
+# General
+color.active=bold white
+color.alternate=on color235
+color.blocked=color245
+color.blocking=bold color223
+color.header=color183
+color.footnote=color183
+color.label=color183
+color.summary=color183
+
+# Task states
+color.completed=color245
+color.deleted=color245 on color235
+color.overdue=bold color210
+color.due=color223
+color.due.today=bold color223
+color.recurring=color183
+color.scheduled=color183
+
+# Priority
+color.uda.priority.H=bold color210
+color.uda.priority.M=color223
+color.uda.priority.L=color245
+
+# Tags
+color.tagged=color183
+color.tag.next=bold color158
+
+# Project
+color.project.none=color245
+
+# Calendar
+color.calendar.due=color223
+color.calendar.due.today=bold color223
+color.calendar.overdue=bold color210
+color.calendar.today=bold color183
+color.calendar.weekend=color245
+color.calendar.holiday=color210
+
+# Burndown
+color.burndown.done=color158
+color.burndown.pending=color210
+color.burndown.started=color223
+
+# Undo
+color.undo.before=color210
+color.undo.after=color158
+
+# Sync
+color.sync.added=color158
+color.sync.changed=color223
+color.sync.rejected=color210
+
+# ── Date format ────────────────────────────────────────────────────
+dateformat=Y-M-D
+dateformat.report=Y-M-D
+weekday.start=Monday

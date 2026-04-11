@@ -1,7 +1,10 @@
 .DS_Store
 **/.DS_Store
+
+# SSH — only track config, never private keys or known_hosts
+.ssh/*
+!.ssh/config
 .config/tmux/plugins
 .config/nvim
 .config/gh
 .config/thefuck
-.config/configstore
