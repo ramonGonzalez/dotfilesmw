@@ -7,6 +7,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="$PATH:${HOME}/.dotnet:${HOME}/.dotnet/tools:/opt/homebrew/opt/mysql-client/bin:$HOME/.local/bin"
 export HOMEBREW_BUNDLE_FILE=~/.config/brew/.BrewfileWork
 export EDITOR=nvim
+export DOCKER_BUILDKIT=1
 export SUDO_EDITOR="$EDITOR"
 export EZA_CONFIG_DIR=~/.config/eza
 export FZF_DEFAULT_OPTS=" \
@@ -108,7 +109,7 @@ alias 'git?'='copilot --allow-all-tools -p'
 alias 'explain'='copilot --allow-all-tools -p'
 alias 'gh?'='copilot --allow-all-tools -p'
 alias bsync="brew update &&\
-    brew bundle install --cleanup --verbose &&\
+    brew bundle install --cleanup --force --verbose &&\
     brew upgrade"
 
 alias -s md='glow -t'
