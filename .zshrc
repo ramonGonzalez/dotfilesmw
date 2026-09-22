@@ -109,7 +109,8 @@ alias 'git?'='copilot --allow-all-tools -p'
 alias 'explain'='copilot --allow-all-tools -p'
 alias 'gh?'='copilot --allow-all-tools -p'
 alias bsync="brew update &&\
-    brew bundle install --cleanup --force --verbose &&\
+    brew bundle install --force --verbose &&\
+    brew bundle cleanup --force --verbose &&\
     brew upgrade"
 
 alias -s md='glow -t'
@@ -149,3 +150,11 @@ if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/ramon/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end

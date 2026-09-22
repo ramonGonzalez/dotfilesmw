@@ -4,6 +4,7 @@
 [tools]
 java = "zulu-21.48.17.0"
 node = "latest"
+yarn = "3.6.4"
 
 [settings]
 # Auto-install missing tools when entering a directory with .mise.toml
